@@ -8,7 +8,7 @@ const PostPage = () => {
             <div>
                 <h2>SINGLE POST TITLE</h2>
                 <div>
-                    <h4><Link to="/">Author Name</Link></h4>
+                    <h4><Link to="/AuthorBlog">Author Name</Link></h4>
                 </div>
 
                 <div>
@@ -19,9 +19,9 @@ const PostPage = () => {
 
                 <div>
                     <h4>3 more posts from same author</h4>
-                    <p><Link to="/">Title 10 - velit, vulputate</Link></p>
-                    <p><Link to="/">Title 11 - velit, vulputate</Link></p>
-                    <p><Link to="/">Title 12 - velit, vulputate</Link></p>
+                    <p><Link to="/AuthorBlog">Title 10 - velit, vulputate</Link></p>
+                    <p><Link to="/AuthorBlog">Title 11 - velit, vulputate</Link></p>
+                    <p><Link to="/AuthorBlog">Title 12 - velit, vulputate</Link></p>
                     <hr></hr>
                 </div>
 

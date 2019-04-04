@@ -6,7 +6,7 @@ const AuthorBlog = () => {
         <>
 
             <div>
-                <p><Link to="/AuthorBlog"> All author</Link></p>
+                <p><Link to='/Author'> All author</Link></p>
                 <h2>SINGLE AUTHOR</h2>
 
                 <div>
