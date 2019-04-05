@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FetchPost } from '../services/FetchPosts';
+import { FetchAuthor } from '../services/FetchAuthors';
 
 
 class PostPage extends React.Component {
@@ -8,7 +9,8 @@ class PostPage extends React.Component {
         super(props);
 
         this.state = {
-            post: {}
+            post: {},
+            author: {}
         }
     }
 
@@ -16,26 +18,31 @@ class PostPage extends React.Component {
         const id = this.props.match.params.postId
         FetchPost(id)
             .then((post) => {
-                console.log(post);
                 this.setState({
                     post: post
                 })
+                FetchAuthor(this.state.post.userId)
+                    .then((author) => {
+                        this.setState({
+                            author: author
+                        })
+                    }
+                    )
+
             })
-        // FetchAuthor(userId)
-        //     .then(())
     }
 
     render() {
-
+        const author = this.state.author;
         return (
             <>
                 <div>
                     <div>
                         <div>
                             <h2>{this.props.match.params.postId} - {this.state.post.title}</h2>
-                            <h4><Link to='/author-blog'>
-                                {this.state.post.userId}
-
+                            <h4><Link to={`/author/${this.state.post.userId}`}>
+                                {author.name}  2
+                                {author.username} 2
                             </Link></h4>
                         </div>
                         <p>{this.state.post.body}</p>
@@ -50,6 +57,7 @@ class PostPage extends React.Component {
                     </div>
                 </div>
             </>
+
         )
     }
 }

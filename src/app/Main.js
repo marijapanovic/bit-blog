@@ -19,7 +19,7 @@ class Main extends React.Component {
             <main>
                 <Switch>
                     <Route exact path='/' component={PostsList} />
-                    <Route exact path='/author-blog' component={AuthorPage} />
+                    <Route exact path='/author/:userId' component={AuthorPage} />
                     <Route exact path='/about' component={About} />
                     <Route path='/authors' component={AuthorList} />
                     <Route path='/post-page/:postId' component={PostPage} />

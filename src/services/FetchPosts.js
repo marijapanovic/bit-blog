@@ -9,7 +9,6 @@ const FetchPosts = () => (
         .then(apiPosts => {
             const posts = apiPosts
                 .map((post) => {
-                    // const { id, title, body } = post;
                     return new Post(post.id, post.title, post.body, post.userId)
 
                 })

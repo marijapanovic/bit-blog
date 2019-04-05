@@ -8,27 +8,28 @@ class AuthorPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            authors: []
-        }
+        // this.state = {
+        //     authors: []
+        // }
     }
 
-    componentDidMount() {
-        // const authorId = this.props.match.params.
-        FetchAuthor()
-            .then((users) => {
-                this.setState({
-                    authors: users
-                })
-            })
-    }
+    // componentDidMount() {
+    //     const authorId = this.props.match.params.userId
+    //     FetchAuthor()
+    //         .then((users) => {
+    //             this.setState({
+    //                 authors: users
+    //             })
+    //         })
+    // }
     render() {
-
+        // const postPageAuthor = <PostPage
+        //     authorName={this.state.author.username}
+        // />
         return (
             <>
                 <div>
-                    {/* <p><Link to='/authors'>{this.state.props.authors}</Link></p> */}
-                    <h2>SINGLE AUTHOR</h2>
+                    <h2>{this.props.author}</h2>
 
                     <div>
                         <img src='' alt='' />

@@ -2,7 +2,7 @@ import ShareData from '../shared/ShareData';
 import Author from '../entities/Author';
 
 
-const FetchAuthor = () => (
+const FetchAuthors = () => (
     fetch(ShareData.url2)
         .then(response => response.json())
         .then(authorsArray => {
@@ -14,4 +14,13 @@ const FetchAuthor = () => (
         })
 )
 
-export default FetchAuthor;
+export const FetchAuthor = (authorId) => (
+    fetch(`${ShareData.url2}/${authorId}`)
+        .then(response => response.json())
+        .then(author => {
+            return new Author(author.id, author.name, author.username, author.address.street, author.address.city, author.address.zipcode, author.company.name, author.company.bs)
+        })
+
+);
+
+export default FetchAuthors;
