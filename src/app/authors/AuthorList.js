@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Author = () => {
+const AuthorList = () => {
     return (
         <>
-
             <div>
                 <h2>AUTHORS (6)</h2>
 
@@ -36,4 +35,4 @@ const Author = () => {
         </>
     )
 }
-export default Author;
+export default AuthorList;
