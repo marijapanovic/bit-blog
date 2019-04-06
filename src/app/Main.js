@@ -5,7 +5,6 @@ import PostsList from '../entities/PostsList';
 import AuthorPage from './authors/AuthorPage';
 import AuthorList from './authors/AuthorList';
 import PostPage from '../entities/PostPage';
-// import FetchPosts from '../shared/ShareData';
 
 
 class Main extends React.Component {
@@ -19,7 +18,7 @@ class Main extends React.Component {
             <main>
                 <Switch>
                     <Route exact path='/' component={PostsList} />
-                    <Route exact path='/author/:userId' component={AuthorPage} />
+                    <Route exact path='/author/:authorId' component={AuthorPage} />
                     <Route exact path='/about' component={About} />
                     <Route path='/authors' component={AuthorList} />
                     <Route path='/post-page/:postId' component={PostPage} />

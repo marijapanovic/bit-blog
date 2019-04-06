@@ -21,7 +21,7 @@ class PostPage extends React.Component {
                 this.setState({
                     post: post
                 })
-                FetchAuthor(this.state.post.userId)
+                FetchAuthor(this.state.post.authorId)
                     .then((author) => {
                         this.setState({
                             author: author
@@ -40,7 +40,7 @@ class PostPage extends React.Component {
                     <div>
                         <div>
                             <h2>{this.props.match.params.postId} - {this.state.post.title}</h2>
-                            <h4><Link to={`/author/${this.state.post.userId}`}>
+                            <h4><Link to={`/author/${this.state.post.authorId}`}>
                                 {author.name}  2
                                 {author.username} 2
                             </Link></h4>

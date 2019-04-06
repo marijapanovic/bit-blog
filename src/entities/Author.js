@@ -1,5 +1,5 @@
 class Author {
-    constructor(userId, name, username, email, phone, street, city, zipCode, companyName, companyBs) {
+    constructor(userId, name, username, email, phone, street, city, zipcode, companyname, companybs) {
         this.userId = userId;
         this.name = name;
         this.username = username;
@@ -7,9 +7,9 @@ class Author {
         this.phone = phone;
         this.street = street;
         this.city = city;
-        this.zipCode = zipCode;
-        this.companyName = companyName;
-        this.companyBs = companyBs;
+        this.zipcode = zipcode;
+        this.companyname = companyname;
+        this.companybs = companybs;
     }
 }
 export default Author;

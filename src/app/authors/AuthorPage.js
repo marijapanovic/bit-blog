@@ -1,35 +1,25 @@
 import React from 'react';
-import FetchAuthor from '../../services/FetchAuthors';
-import { FetchPost } from '../../services/FetchPosts';
+import { FetchAuthor } from '../../services/FetchAuthors';
 
 class AuthorPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            post: {},
-            author: []
+            author: {}
         }
     }
 
     componentDidMount() {
-        const id = this.props.match.params.postId
-        FetchPost(id)
-            .then((post) => {
-                console.log(post);
+        const authorId = this.props.match.params.authorId;// parametar iz route
+        FetchAuthor(authorId)
+            .then((author) => {
+                console.log(author);
                 this.setState({
-                    post: post
+                    author: author
                 })
-                FetchAuthor(this.state.post.userId)
-                    .then((author) => {
-                        console.log(author);
-                        this.setState({
-                            author: author
-                        })
-                    }
-                    )
-
-            })
+            }
+            )
     }
 
     render() {
@@ -40,30 +30,30 @@ class AuthorPage extends React.Component {
 
                     <div>
                         <img src='https://via.placeholder.com/150' alt='' />
-                        <h3>Name Surname</h3>
-                        <p>username: ___________</p>
-                        <p>email: ___________</p>
-                        <p>phone: ___________</p>
+                        <h3>{this.state.author.name}</h3>
+                        <p>username: {this.state.author.username}</p>
+                        <p>email: {this.state.author.email} </p>
+                        <p>phone: {this.state.author.phone}</p>
 
                         <hr></hr>
                     </div>
 
                     <div>
                         <h3>Address</h3>
-                        <p>street: ___________</p>
-                        <p>city: ___________</p>
-                        <p>zipcode: ___________</p>
+                        <p>street: {this.state.author.street}</p>
+                        <p>city: {this.state.author.city}</p>
+                        <p>zipcode: {this.state.author.zipcode}</p>
                         <iframe>
                             Google MAP ubaciti !!!
-                    </iframe>
+                        </iframe>
 
                         <hr></hr>
                     </div>
 
                     <div>
                         <h3>Company</h3>
-                        <p>name: ___________</p>
-                        <p>slogan: ___________</p>
+                        <p>name: {this.state.author.companyname}</p>
+                        <p>slogan:{this.state.author.companybs}</p>
 
                         <hr></hr>
                     </div>
