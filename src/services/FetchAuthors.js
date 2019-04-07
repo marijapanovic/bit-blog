@@ -9,7 +9,7 @@ const FetchAuthors = () => (
         .then(authorsArray => {
             const authors = authorsArray.map((author) => {
                 return  new Author(author.id, author.name, author.username , author.email, author.phone, author.address.street, 
-                    author.address.city, author.address.zipcode, author.company.name, author.company.bs)
+                    author.address.city, author.address.zipcode, author.company.name, author.company.bs, author.address.geo.lat, author.address.geo.lng)
             }
             )
             return authors
@@ -22,7 +22,7 @@ export const FetchAuthor = (authorId) => (
             return response.json()})
         .then(author => {
             return new Author(author.id, author.name, author.username , author.email, author.phone, author.address.street, 
-                author.address.city, author.address.zipcode, author.company.name, author.company.bs)
+                author.address.city, author.address.zipcode, author.company.name, author.company.bs, author.address.geo.lat, author.address.geo.lng)
         })
 
 );

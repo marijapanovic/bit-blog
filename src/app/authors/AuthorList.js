@@ -23,15 +23,13 @@ class AuthorList extends React.Component{
                 this.setState({
                     authorposts : authorposts
                 })
-               // console.log(authorposts);
-            })
-            //console.log(authors);  
+            })  
         })
     }
     render(){
     return (
         <>
-            <div>
+            <div >
                 <h2>AUTHORS({this.state.authors.length})</h2>
 
                 <div>

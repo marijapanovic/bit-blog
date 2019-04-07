@@ -1,5 +1,6 @@
 import React from 'react';
 import { FetchAuthor } from '../../services/FetchAuthors';
+import {Link} from 'react-router-dom';
 
 class AuthorPage extends React.Component {
     constructor(props) {
@@ -11,10 +12,9 @@ class AuthorPage extends React.Component {
     }
 
     componentDidMount() {
-        const authorId = this.props.match.params.authorId;// parametar iz route
+        const authorId = this.props.match.params.authorId;// parametar from route
         FetchAuthor(authorId)
             .then((author) => {
-                //console.log(author);
                 this.setState({
                     author: author
                 })
@@ -25,7 +25,8 @@ class AuthorPage extends React.Component {
     render() {
         return (
             <>
-                <div>
+                <div className="authorList">
+                <p className="back"><Link to='/authors' >{`<<`}</Link></p>
                     <h2>SINGLE AUTHOR</h2>
 
                     <div>
@@ -43,10 +44,8 @@ class AuthorPage extends React.Component {
                         <p>street: {this.state.author.street}</p>
                         <p>city: {this.state.author.city}</p>
                         <p>zipcode: {this.state.author.zipcode}</p>
-                        <iframe>
-                            Google MAP ubaciti !!!
-                        </iframe>
-
+                        <iframe src={`https://www.google.com/maps/@${this.state.author.geolat},${this.state.author.geolng},12z`} height='300px' width='400px'></iframe>
+                      
                         <hr></hr>
                     </div>
 
