@@ -9,7 +9,7 @@ import PostPage from '../entities/PostPage';
 
 class Main extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
     }
 
@@ -17,11 +17,12 @@ class Main extends React.Component {
         return (
             <main>
                 <Switch>
-                    <Route exact path='/' component={PostsList} />
-                    <Route exact path='/author/:authorId' component={AuthorPage} />
-                    <Route exact path='/about' component={About} />
+                    
+                    <Route path='/author/:authorId' component={AuthorPage} />
+                    <Route path='/about' component={About} />
                     <Route path='/authors' component={AuthorList} />
                     <Route path='/post-page/:postId' component={PostPage} />
+                    <Route path='/' component={PostsList} />
                 </Switch>
 
             </main>

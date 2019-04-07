@@ -14,7 +14,7 @@ class AuthorPage extends React.Component {
         const authorId = this.props.match.params.authorId;// parametar iz route
         FetchAuthor(authorId)
             .then((author) => {
-                console.log(author);
+                //console.log(author);
                 this.setState({
                     author: author
                 })

@@ -17,7 +17,6 @@ class PostsList extends React.Component {
                 this.setState({
                     posts: posts
                 })
-                console.log(posts);
             })
     }
 
@@ -29,18 +28,13 @@ class PostsList extends React.Component {
                     <div>
                         {this.state.posts.map((post) => (
                             <div>
-
-                                <h6><Link to={`/post-page/${post.id}`}>{post.title}</Link></h6>
+                                <h6><Link to={`/post-page/${post.id}`}>Id: {post.id}.
+                                Title: {post.title}</Link></h6>
                                 <p>{post.body}</p>
-
                                 <hr />
-
                             </div>
-                        ))
-
-                        }
+                        ))}
                     </div>
-
                 </div>
             </>
         );

@@ -1,9 +1,10 @@
 import ShareData from '../shared/ShareData';
 import Author from '../entities/Author';
+import Post from '../entities/Post';
 
 
 const FetchAuthors = () => (
-    fetch(ShareData.url2)
+    fetch(ShareData.urlAuthors)
         .then(response => response.json())
         .then(authorsArray => {
             const authors = authorsArray.map((author) => {
@@ -16,7 +17,7 @@ const FetchAuthors = () => (
 )
 
 export const FetchAuthor = (authorId) => (
-    fetch(`${ShareData.url2}/${authorId}`)
+    fetch(`${ShareData.urlAuthors}/${authorId}`)
         .then(response => {
             return response.json()})
         .then(author => {
@@ -25,5 +26,16 @@ export const FetchAuthor = (authorId) => (
         })
 
 );
+
+export const FetchAuthorPosts = (authorId) =>(
+    fetch(`${ShareData.urlAuthorPosts}${authorId}`)
+    .then(response => response.json())
+    .then(authorPostsArray => {
+        const authorPosts = authorPostsArray.map((post)=>{
+            return new Post(post.id, post.title, post.body, post.authorId)
+        })
+        return authorPosts;
+    })
+)
 
 export default FetchAuthors;
