@@ -45,7 +45,7 @@ class AuthorPage extends React.Component {
                         <p>city: {this.state.author.city}</p>
                         <p>zipcode: {this.state.author.zipcode}</p>
                         <iframe src={`https://www.google.com/maps/@${this.state.author.geolat},${this.state.author.geolng},12z`} height='300px' width='400px'></iframe>
-                      
+//                       //src={`https://maps.google.com/maps?q=${this.state.author.geoLat},${this.state.author.geoLng}&hl=es;z=14&amp;&output=embed`}>
                         <hr></hr>
                     </div>
 
